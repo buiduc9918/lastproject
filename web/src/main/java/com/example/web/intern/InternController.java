@@ -1,4 +1,4 @@
-package com.example.web;
+package com.example.web.intern;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class InternController {
     private final InternManagementSystem internManagementSystem;
-    public InternController(InternManagementSystem internManagementSystem) {
-        this.internManagementSystem = internManagementSystem;
+    public InternController(InternManagementSystem internManaSys) {
+        this.internManagementSystem = internManaSys;
     }
     @GetMapping("/interns")
     public String internsPage(Model model) {

@@ -1,4 +1,4 @@
-package com.example.web;
+package com.example.web.intern;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 public class InternService {
     private final InternRepository internRepository;
 
-    @Autowired
     public InternService(InternRepository internRepository) {
         this.internRepository = internRepository;
     }
@@ -34,7 +33,7 @@ public class InternService {
     public void deleteIntern(Long id) {
         internRepository.deleteById(id);
     }
-    
+    @Autowired
     public void addNewIntern(Intern intern){
        Optional<Intern> internByName = internRepository.findInternByName(intern.getName());
             if(internByName.isPresent()){
@@ -42,7 +41,7 @@ public class InternService {
             }
         internRepository.save(intern);
     }
-
+    @Autowired
     public void deleteIntern(int id){
        Optional<Intern> exists = internRepository.existsById(id);
 
